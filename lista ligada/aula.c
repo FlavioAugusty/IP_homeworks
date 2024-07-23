@@ -57,6 +57,24 @@ bool Insere(Lista* l, Registro reg, int pos){
     return true;
 }
 
+bool exclui(Lista* l, int pos) {
+    if (pos<0 || pos>l->elementos-1) return false;
+    int i;
+    No* p;
+    No* apagar;
+    if (pos == 0){
+        apagar = l->inicio;
+        l->inicio = apagar->prox;
+    }else {
+        p = l->inicio;
+        for (i= 0; i<pos-1;i++) p = p->prox;
+        apagar = p->prox;
+        p->prox = apagar->prox;
+    }
+    free(apagar);
+    l->elementos--;
+    return true;
+}
 
 int main(){
     Lista l1;
