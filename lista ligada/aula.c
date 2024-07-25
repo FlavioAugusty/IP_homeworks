@@ -6,8 +6,6 @@
 
 typedef int bool;
 
-typedef int bool;
-
 typedef struct {
     int id;
     float media;
